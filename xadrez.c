@@ -38,7 +38,8 @@ int main() {
     printf("Quantas casas deseja mover? ");
     scanf("%d", &casas);
     
-    for (int i = 0; i < casas; i++) {
+    int j = 0;
+    while (j < casas) {
         switch (opcao) {
             case 1: printf("Cima, Direita\n"); break;
             case 2: printf("Cima, Esquerda\n"); break;
@@ -46,6 +47,7 @@ int main() {
             case 4: printf("Baixo, Esquerda\n"); break;
             default: printf("Opção inválida.\n"); return 1;
         }
+        j++;
     }
     
     printf("\n"); // Espaço entre os movimentos
@@ -66,7 +68,8 @@ int main() {
     printf("Quantas casas deseja mover? ");
     scanf("%d", &casas);
     
-    for (int i = 0; i < casas; i++) {
+    int k = 0;
+    do {
         switch (opcao) {
             case 1: printf("Frente\n"); break;
             case 2: printf("Trás\n"); break;
@@ -78,39 +81,70 @@ int main() {
             case 8: printf("Baixo, Esquerda\n"); break;
             default: printf("Opção inválida.\n"); return 1;
         }
-    }
+        k++;
+    } while (k < casas);
     
     printf("\n"); // Espaço entre os movimentos
     
-    // Movimento do Cavalo com escolha do usuário
+    // Movimento do Cavalo com escolha da direção
     printf("Movimento do Cavalo:\n");
     printf("Escolha a direção do Cavalo:\n");
-    printf("1 - Cima Direita\n");
-    printf("2 - Cima Esquerda\n");
-    printf("3 - Baixo Direita\n");
-    printf("4 - Baixo Esquerda\n");
+    printf("1 - Cima, Cima, Direita\n");
+    printf("2 - Cima, Cima, Esquerda\n");
+    printf("3 - Baixo, Baixo, Direita\n");
+    printf("4 - Baixo, Baixo, Esquerda\n");
+    printf("5 - Direita, Direita, Cima\n");
+    printf("6 - Direita, Direita, Baixo\n");
+    printf("7 - Esquerda, Esquerda, Cima\n");
+    printf("8 - Esquerda, Esquerda, Baixo\n");
     scanf("%d", &opcao);
     
-    switch(opcao) {
-        case 1:
-            for (int i = 0; i < 2; i++) printf("Cima\n");
+    // Loop para simular o movimento do cavalo com base na escolha do usuário
+    switch (opcao) {
+        case 1: 
+            printf("Cima\n");
+            printf("Cima\n");
             printf("Direita\n");
             break;
-        case 2:
-            for (int i = 0; i < 2; i++) printf("Cima\n");
+        case 2: 
+            printf("Cima\n");
+            printf("Cima\n");
             printf("Esquerda\n");
             break;
-        case 3:
-            for (int i = 0; i < 2; i++) printf("Baixo\n");
+        case 3: 
+            printf("Baixo\n");
+            printf("Baixo\n");
             printf("Direita\n");
             break;
-        case 4:
-            for (int i = 0; i < 2; i++) printf("Baixo\n");
+        case 4: 
+            printf("Baixo\n");
+            printf("Baixo\n");
             printf("Esquerda\n");
+            break;
+        case 5: 
+            printf("Direita\n");
+            printf("Direita\n");
+            printf("Cima\n");
+            break;
+        case 6: 
+            printf("Direita\n");
+            printf("Direita\n");
+            printf("Baixo\n");
+            break;
+        case 7: 
+            printf("Esquerda\n");
+            printf("Esquerda\n");
+            printf("Cima\n");
+            break;
+        case 8: 
+            printf("Esquerda\n");
+            printf("Esquerda\n");
+            printf("Baixo\n");
             break;
         default:
             printf("Opção inválida.\n");
+            return 1;
     }
-    
+
     return 0;
 }
